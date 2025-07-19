@@ -24,10 +24,10 @@ const LoginPage = () => {
         <div className="w-full max-w-md space-y-8">
           {/* Logo */}
           <div className="text-center mb-8">
-            <div className="flex flex-col items-center gap-2 group">
+            <div className="flex flex-col items-center gap-2 group ">
               <div
                 className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20
-              transition-colors"
+              transition-colors animate-bounce"
               >
                 <MessageSquare className="w-6 h-6 text-primary" />
               </div>
@@ -43,7 +43,7 @@ const LoginPage = () => {
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Mail className="size-5 text-base-content/40" />
+                  <Mail className="size-5 text-primary" />
                 </div>
                 <input
                   type="email"
@@ -60,7 +60,7 @@ const LoginPage = () => {
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Lock className="size-5 text-base-content/40" />
+                  <Lock className="size-5 text-primary" />
                 </div>
                 <input
                   type={showPassword ? "text" : "password"}
@@ -75,9 +75,9 @@ const LoginPage = () => {
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? (
-                    <EyeOff className="size-5 text-base-content/40" />
+                    <Eye className="size-5 text-primary" />
                   ) : (
-                    <Eye className="size-5 text-base-content/40" />
+                    <EyeOff className="size-5 text-base-content/40" />
                   )}
                 </button>
               </div>
