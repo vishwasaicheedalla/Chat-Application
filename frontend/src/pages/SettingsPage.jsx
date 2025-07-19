@@ -2,16 +2,16 @@ import { THEMES } from "../constants";
 import { useThemeStore } from "../store/useThemeStore";
 import { Send } from "lucide-react";
 
-const PREVIEW_MESSAGES = [
-  { id: 1, content: "Hey! How's it going?", isSent: false },
-  { id: 2, content: "I'm doing great! Just working on some new features.", isSent: true },
+const preview_messages = [
+  { id: 1, content: "Hey! How are you doing?", isSent: false },
+  { id: 2, content: "I'm doing great! Just working on some project.", isSent: true },
 ];
 
 const SettingsPage = () => {
   const { theme, setTheme } = useThemeStore();
 
   return (
-    <div className="h-screen container mx-auto px-4 pt-20 max-w-5xl">
+    <div className="h-min-screen container mx-auto px-4 pt-20 max-w-5xl">
       <div className="space-y-6">
         <div className="flex flex-col gap-1">
           <h2 className="text-lg font-semibold">Theme</h2>
@@ -47,18 +47,18 @@ const SettingsPage = () => {
                 <div className="px-4 py-3 border-b border-base-300 bg-base-100">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-content font-medium">
-                      J
+                      R
                     </div>
                     <div>
-                      <h3 className="font-medium text-sm">John Doe</h3>
-                      <p className="text-xs text-base-content/70">Online</p>
+                      <h3 className="font-medium text-sm">Rama Krishna</h3>
+                      <p className="text-xs text-base-content/70"><span className="text-green-500 ">• </span>Online</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Chat Messages */}
                 <div className="p-4 space-y-4 min-h-[200px] max-h-[200px] overflow-y-auto bg-base-100">
-                  {PREVIEW_MESSAGES.map((message) => (
+                  {preview_messages.map((message) => (
                     <div
                       key={message.id}
                       className={`flex ${message.isSent ? "justify-end" : "justify-start"}`}
@@ -80,7 +80,7 @@ const SettingsPage = () => {
                       type="text"
                       className="input input-bordered flex-1 text-sm h-10"
                       placeholder="Type a message..."
-                      value="This is a preview"
+                      value=""
                       readOnly
                     />
                     <button className="btn btn-primary h-10 min-h-0">
